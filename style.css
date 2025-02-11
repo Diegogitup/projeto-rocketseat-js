@@ -52,6 +52,7 @@
 
 body {
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
 }
 
 body * {
@@ -60,7 +61,8 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   /*border: 1px solid red;*/
   margin: 56px auto 0px;
   padding: 0 24px;
@@ -99,18 +101,22 @@ body * {
   background: white var(--switch-bg-url) no-repeat center;
   border: 0px;
   border-radius: 50%;
-  cursor: pointer;  
+  cursor: pointer;
 
   position: absolute;
   top: 50%;
-  left: 0;
+  left: 0%;
   z-index: 1;
   transform: translateY(-50%);
+  animation: slide-on 0.4s forwards;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.4s forwards;
 }
 
 #switch span {
@@ -194,4 +200,35 @@ footer {
 footer a:hover {
   color: blue;
   transition: color 0.1s;
+}
+
+/*media queries*/
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+
+@keyframes slide-on {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
 }
