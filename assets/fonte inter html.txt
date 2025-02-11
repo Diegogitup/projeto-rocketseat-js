@@ -1,0 +1,11 @@
+HTML
+
+<link rel="preconnect" href="https://fonts.googleleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+
+
+
+
+CSS:
+
+font-family: 'Inter', sans-serif;
